@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect, useState } from "react"
 
 export default function Home() {
@@ -21,10 +22,11 @@ export default function Home() {
   }, [count])
 
   return (
-    <main>
-      <h1>Hej verden</h1>
-      <button onClick={refreshHandler}>Refresh List</button>
-      {pokemons.map(pokemon => <p>{pokemon.name}</p>)}
-    </main>
+    <>
+      <h1 className="text-3xl">Pokemons</h1>
+      <ul>
+        {pokemons.map(pokemon => <li key={pokemon.name}><Link href={`/pokemon/${pokemon.name}`}>{pokemon.name}</Link></li>)}
+      </ul>
+    </>
   )
 }

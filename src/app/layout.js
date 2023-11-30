@@ -8,21 +8,11 @@ export default function RootLayout({ children }) {
     <html lang="da">
       <body>
         <header>
-          <nav>
-            <ul>
-              <li>
-                <Link href="/">Forside</Link>
-              </li>
-              <li>
-                <Link href="/settings">Indstillinger</Link>
-              </li>
-              <li>
-                <Link href="/counter">Counter</Link>
-              </li>
-            </ul>
-          </nav>
+          <Link href="/">PokeDex</Link>
         </header>
-        {children}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   )
